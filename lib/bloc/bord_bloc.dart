@@ -27,6 +27,7 @@ class BordBloc extends Bloc<BordEvent, BordState> {
     BordEvent event,
   ) async* {
     if (event is Tap) {
+      currentMove++;
       updateBord(event.index);
       winner = checkWinner(_bordState);
       if (winner != null) {
@@ -62,7 +63,6 @@ class BordBloc extends Bloc<BordEvent, BordState> {
       _bordState[index] = 1;
       playerOneTurn = true;
     }
-    currentMove++;
   }
 
   void hardBot() {
@@ -86,7 +86,7 @@ class BordBloc extends Bloc<BordEvent, BordState> {
   void easyBot() {
     int move = Random().nextInt(9);
     bool isPlayed = false;
-    while (!isPlayed) {
+    while (!isPlayed && currentMove < 5) {
       if (_bordState[move] != 0 && _bordState[move] != 1) {
         _bordState[move] = 1;
         isPlayed = true;
@@ -99,7 +99,7 @@ class BordBloc extends Bloc<BordEvent, BordState> {
   void mediumBot() {
     bool luck = false;
     luck = Random().nextBool();
-    if (luck && currentMove <9) {
+    if (luck && currentMove < 5) {
       hardBot();
     } else {
       easyBot();
