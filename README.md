@@ -1,6 +1,7 @@
-# tictactoe
+# Tic-Tac-Toe
 
-A new Flutter project.
+A Tic Tac Toe game made with flutter using bloc pattern.<br>
+Used Minimax Algo for Hard Bot
 
 ## Getting Started
 
@@ -14,3 +15,14 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter, view our
 [online documentation](https://flutter.dev/docs), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+
+## Preview
+
+
+<p align="center">
+  <img src="example/gif.gif" width="180" height = ""title="hover text">
+</p>
+
+## License
+This project is licensed under the [MIT](https://choosealicense.com/licenses/mit/) License.
+
